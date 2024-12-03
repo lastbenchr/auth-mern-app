@@ -29,7 +29,7 @@ function Signup() {
     console.log("handleSignup");
 
     try {
-      const url = "http://localhost:8080/auth/signup";
+      const url = "https://auth-app-api-tawny.vercel.app/auth/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {

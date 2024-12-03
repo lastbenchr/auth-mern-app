@@ -24,7 +24,7 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const url = "http://localhost:8080/products";
+      const url = "https://auth-app-api-tawny.vercel.app/products";
       const options = {
         method: "GET", // Optional, since GET is the default.
         headers: {
