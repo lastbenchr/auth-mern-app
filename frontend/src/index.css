@@ -1,0 +1,70 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set default font family and font size for the entire app */
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Set default link styles */
+/* a {
+  text-decoration: none;
+  color: inherit;
+} */
+
+/* Add some basic global spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* Set a container with some padding and max-width for better layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Adding a universal box-shadow for elements with a class */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Example of setting a default margin for section elements */
+section {
+  margin-bottom: 20px;
+}

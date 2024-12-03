@@ -1,0 +1,42 @@
+# Node.js dependencies
+node_modules/
+*/node_modules/
+
+# Logs
+logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+*.env
+*.env.*
+
+# Build output
+build/
+dist/
+
+# Next.js (if applicable for frontend)
+.next/
+out/
+
+# Coverage reports
+coverage/
+
+# Temporary files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+*.swp
+*~
