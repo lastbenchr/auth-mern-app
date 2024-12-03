@@ -24,7 +24,7 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const url = "https://auth-mern-app-schk.vercel.app//products";
+      const url = "https://auth-mern-app-schk.vercel.app/products";
       const options = {
         method: "GET", // Optional, since GET is the default.
         headers: {
