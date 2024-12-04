@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { handleError, handleSuccess } from "../utils";
 import { ToastContainer } from "react-toastify";
+import Courses from "../components/Courses";
+import styled from "styled-components";
+import Footer from "../components/Footer";
 
 // protected component, only authenticated user can see this component.
 function Home() {
@@ -22,41 +25,64 @@ function Home() {
     }, 1000);
   };
 
-  const fetchProducts = async () => {
-    try {
-      const url = "https://auth-mern-app-schk.vercel.app/products";
-      const options = {
-        method: "GET", // Optional, since GET is the default.
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      };
-      const response = await fetch(url, options);
-      const result = await response.json();
-      setProducts(result);
-      console.log(result);
-    } catch (err) {
-      handleError(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
   return (
-    <div>
-      <h1>Welcome {loggedInUser}</h1>
-      <button onClick={handleLogout}>Logout</button>
-      <div>
-        {products &&
-          products.map((cur, ind) => {
-            return <ul>{cur.name}</ul>;
-          })}
-      </div>
+    <HomeWrapper>
+      <WelcomeText>
+        <TextContainer>
+          Welcome <Span>{loggedInUser} 😎</Span>
+        </TextContainer>
+        <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+      </WelcomeText>
+
+      <Courses />
       <ToastContainer />
-    </div>
+      <Footer />
+    </HomeWrapper>
   );
 }
 
 export default Home;
+
+const HomeWrapper = styled.div`
+  padding: 20px;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+`;
+
+const WelcomeText = styled.h1`
+  font-size: clamp(
+    1.8rem,
+    5vw,
+    2.5rem
+  ); // Minimum 1.8rem, preferred size is 5vw, and maximum 3.2rem
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+`;
+
+const Span = styled.span`
+  margin-left: 5px;
+`;
+
+const LogoutButton = styled.button`
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #feb47b;
+  }
+`;
