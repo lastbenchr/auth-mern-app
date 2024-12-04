@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { handleError, handleSuccess } from "../utils";
+import { handleSuccess } from "../utils";
 import { ToastContainer } from "react-toastify";
 import Courses from "../components/Courses";
 import styled from "styled-components";
@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 // protected component, only authenticated user can see this component.
 function Home() {
   const [loggedInUser, setLoggedInUser] = useState("");
-  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
